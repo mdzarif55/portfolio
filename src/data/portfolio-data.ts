@@ -330,6 +330,32 @@ export const portfolioData: PortfolioData = {
       },
     },
     {
+      id: "songbad-suddhi",
+      title: "SongbadSudhhi (সংবাদ শুদ্ধি)",
+      subtitle: "Bangla Grammar Checker & Professional Newsroom Proofreader",
+      description:
+        "Professional Bengali grammar, spelling, and editorial proofreading platform designed for newsrooms, journalists, and sub-editors.",
+      fullDescription:
+        "SongbadSudhhi (সংবাদ শুদ্ধি) is a high-precision editorial and proofreading system for Bangladeshi mainstream newsrooms, journalists, and sub-editors. Built with Next.js 14, TypeScript, and Tailwind CSS, it enforces Bangla Academy spelling standards, grammar rules (honorific consistency, avoiding double plurals), punctuation corrections, and conservative editorial preservation. Integrates Google Gemini 2.5 Flash for nuanced editorial review alongside a fast offline dictionary.",
+      category: "Full-Stack",
+      liveUrl: "https://songbad-suddhi-bangla-grammer-check.vercel.app/",
+      githubUrl: "https://github.com/mdzarif55/SongbadSuddhi-BanglaGrammer_Checker",
+      featured: true,
+      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Gemini 2.5 Flash", "Bangla NLP", "Vitest"],
+      features: [
+        "Bangla Academy standardized spelling and grammar verification (ণ-ত্ব, ষ-ত্ব বিধান, দ্বৈত বহুবচন রোধ)",
+        "Conservative newsroom policy protecting quotes, legal terminology, person names, and numbers",
+        "Safe character-offset reverse text replacement with Visual Diff and side-by-side comparison",
+        "Google Gemini 2.5 Flash API integration paired with local dictionary and rule-based fallback",
+      ],
+      metrics: "Newsroom AI & NLP",
+      colorScheme: {
+        from: "from-emerald-500/20",
+        to: "to-teal-500/20",
+        accent: "border-emerald-500/30 text-emerald-600 dark:text-emerald-400",
+      },
+    },
+    {
       id: "bangla-news-24",
       title: "Bangla News 24",
       subtitle: "Next-Gen Bengali Digital News Portal & Media Outlet",
