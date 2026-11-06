@@ -461,32 +461,32 @@ export const portfolioData: PortfolioData = {
         "Participated in programming competitions, academic hackathons, and team projects",
       ],
     },
-    {
-      degree: "Higher Secondary Certificate (HSC) — Science",
-      institution: "Betagi Govt. College",
-      cgpa: "GPA 4.08 / 5.00",
-      location: "Barguna, Barishal, Bangladesh",
-      period: "Passing Year: 2019",
-      description:
-        "Higher secondary education concentrating in Science disciplines with coursework in Physics, Chemistry, Higher Mathematics, and ICT.",
-      highlights: [
-        "Achieved GPA 4.08 out of 5.00 in Science division",
-        "Rigorous foundation in analytical mathematics and computing fundamentals",
-      ],
-    },
-    {
-      degree: "Secondary School Certificate (SSC) — Science",
-      institution: "Betagi Model Pilot High School",
-      cgpa: "GPA 4.36 / 5.00",
-      location: "Barguna, Barishal, Bangladesh",
-      period: "Passing Year: 2017",
-      description:
-        "Secondary school certification with high academic distinction in the Science stream.",
-      highlights: [
-        "Achieved GPA 4.36 out of 5.00 in Science stream",
-        "Strong fundamental grounding in general science, mathematics, and logical reasoning",
-      ],
-    },
+    // {
+    //   degree: "Higher Secondary Certificate (HSC) — Science",
+    //   institution: "Betagi Govt. College",
+    //   cgpa: "GPA 4.08 / 5.00",
+    //   location: "Barguna, Barishal, Bangladesh",
+    //   period: "Passing Year: 2019",
+    //   description:
+    //     "Higher secondary education concentrating in Science disciplines with coursework in Physics, Chemistry, Higher Mathematics, and ICT.",
+    //   highlights: [
+    //     "Achieved GPA 4.08 out of 5.00 in Science division",
+    //     "Rigorous foundation in analytical mathematics and computing fundamentals",
+    //   ],
+    // },
+    // {
+    //   degree: "Secondary School Certificate (SSC) — Science",
+    //   institution: "Betagi Model Pilot High School",
+    //   cgpa: "GPA 4.36 / 5.00",
+    //   location: "Barguna, Barishal, Bangladesh",
+    //   period: "Passing Year: 2017",
+    //   description:
+    //     "Secondary school certification with high academic distinction in the Science stream.",
+    //   highlights: [
+    //     "Achieved GPA 4.36 out of 5.00 in Science stream",
+    //     "Strong fundamental grounding in general science, mathematics, and logical reasoning",
+    //   ],
+    // },
   ],
   certifications: [
     {
