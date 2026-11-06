@@ -24,7 +24,7 @@ interface HeroProps {
 }
 
 export function Hero({ onOpenResume }: HeroProps) {
-  const { personal, stats } = portfolioData;
+  const { personal } = portfolioData;
   const [activeTab, setActiveTab] = useState<"profile" | "terminal">("profile");
 
   return (
@@ -346,28 +346,6 @@ export function Hero({ onOpenResume }: HeroProps) {
                 )}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Stats Strip */}
-        <div className="mt-16 pt-10 border-t border-neutral-200 dark:border-neutral-800">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className="p-5 rounded-2xl bg-white/60 dark:bg-neutral-900/40 border border-neutral-200/80 dark:border-neutral-800/80 backdrop-blur-sm hover:border-blue-500/40 transition-colors"
-              >
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-900 dark:text-white bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-300 bg-clip-text text-transparent">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mt-1">
-                  {stat.label}
-                </div>
-                <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-                  {stat.description}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
