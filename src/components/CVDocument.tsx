@@ -8,13 +8,12 @@ import {
   MapPin,
   Github,
   Linkedin,
-  ExternalLink,
 } from "lucide-react";
 
 export function CVDocument() {
   const { personal, education } = portfolioData;
 
-  // Best curated skills for Full-Stack Developer (compact 5 rows)
+  // Best curated skills for Full-Stack Developer
   const fullStackSkills = [
     {
       category: "Frontend",
@@ -89,163 +88,165 @@ export function CVDocument() {
   return (
     <div
       id="cv-document"
-      className="cv-outer-box w-full max-w-[800px] mx-auto bg-white text-neutral-900 px-6 py-5 sm:px-8 sm:py-6 shadow-md border border-neutral-200 rounded-lg print:border-none print:shadow-none print:p-0 print:m-0 print:max-w-none print:rounded-none font-sans text-[11px] leading-[1.35] tracking-tight"
+      className="cv-outer-box w-full max-w-[794px] min-h-[1080px] flex flex-col justify-between mx-auto bg-white text-neutral-900 p-8 sm:p-9 shadow-md border border-neutral-200 rounded-lg print:border-none print:shadow-none print:p-0 print:m-0 print:max-w-none print:min-h-0 print:rounded-none font-sans text-[12px] leading-[1.45] tracking-tight"
     >
-      {/* Header */}
-      <header className="border-b border-neutral-800 pb-2 mb-2 text-center">
-        <h1 className="text-xl sm:text-2xl font-black tracking-tight text-neutral-950 uppercase leading-none">
-          {personal.name}
-        </h1>
-        <p className="text-[11.5px] font-bold text-blue-800 tracking-wide mt-0.5">
-          Full-Stack Developer • MERN &amp; Cross-Platform
-        </p>
+      <div>
+        {/* Header */}
+        <header className="border-b-2 border-neutral-900 pb-2.5 mb-3 text-center">
+          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase leading-none">
+            {personal.name}
+          </h1>
+          <p className="text-[13px] font-bold text-blue-800 tracking-wide mt-1">
+            Full-Stack Developer • MERN &amp; Cross-Platform
+          </p>
 
-        {/* Contact Info Row */}
-        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 mt-1 text-[10.5px] text-neutral-700 font-medium">
-          <span>{personal.location}</span>
-          <span>|</span>
-          <a href={`tel:${personal.phone}`} className="hover:underline font-mono">
-            {personal.phone}
-          </a>
-          <span>|</span>
-          <a href={`mailto:${personal.email}`} className="hover:underline text-blue-700">
-            {personal.email}
-          </a>
-          <span>|</span>
-          <a
-            href={personal.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-blue-700 font-mono"
-          >
-            github.com/mdzarif55
-          </a>
-          <span>|</span>
-          <a
-            href={personal.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-blue-700 font-mono"
-          >
-            linkedin.com/in/mdzarif55
-          </a>
-        </div>
-      </header>
+          {/* Contact Info Row */}
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mt-1.5 text-[11.5px] text-neutral-700 font-medium">
+            <span>{personal.location}</span>
+            <span>|</span>
+            <a href={`tel:${personal.phone}`} className="hover:underline font-mono">
+              {personal.phone}
+            </a>
+            <span>|</span>
+            <a href={`mailto:${personal.email}`} className="hover:underline text-blue-700">
+              {personal.email}
+            </a>
+            <span>|</span>
+            <a
+              href={personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline text-blue-700 font-mono"
+            >
+              github.com/mdzarif55
+            </a>
+            <span>|</span>
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline text-blue-700 font-mono"
+            >
+              linkedin.com/in/mdzarif55
+            </a>
+          </div>
+        </header>
 
-      {/* Career Summary */}
-      <section className="mb-2">
-        <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-neutral-900 border-b border-neutral-300 pb-0.5 mb-1">
-          Career Objective
-        </h2>
-        <p className="text-neutral-800 text-justify text-[10.5px] leading-relaxed">
-          Passionate Full-Stack Developer skilled in building clean, responsive web and cross-platform applications. Proficient in Next.js, React.js, Node.js, Express, MongoDB, PostgreSQL, and modern API architectures. Proven problem-solving capabilities developed through competitive programming (150+ Codeforces problems). Seeking a Full-Stack / React Developer role to engineer scalable user experiences and drive robust technical solutions.
-        </p>
-      </section>
+        {/* Career Summary */}
+        <section className="mb-3">
+          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+            Career Objective
+          </h2>
+          <p className="text-neutral-800 text-justify text-[11.5px] leading-relaxed">
+            Passionate Full-Stack Developer skilled in building clean, responsive web and cross-platform applications. Proficient in Next.js, React.js, Node.js, Express, MongoDB, PostgreSQL, and modern API architectures. Proven problem-solving capabilities developed through competitive programming (150+ Codeforces problems). Seeking a Full-Stack / React Developer role to engineer scalable user experiences and drive robust technical solutions.
+          </p>
+        </section>
 
-      {/* Technical Skills (Curated Best for Full Stack) */}
-      <section className="mb-2">
-        <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-neutral-900 border-b border-neutral-300 pb-0.5 mb-1">
-          Technical Skills (Full-Stack)
-        </h2>
-        <div className="space-y-0.5 text-[10.5px]">
-          {fullStackSkills.map((item) => (
-            <div key={item.category} className="flex items-baseline">
-              <span className="font-bold text-neutral-950 w-28 shrink-0">
-                • {item.category}:
-              </span>
-              <span className="text-neutral-800">{item.skills}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* Technical Skills (Curated Best for Full Stack) */}
+        <section className="mb-3">
+          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+            Technical Skills (Full-Stack)
+          </h2>
+          <div className="space-y-1 text-[11.5px]">
+            {fullStackSkills.map((item) => (
+              <div key={item.category} className="flex items-baseline">
+                <span className="font-bold text-neutral-950 w-32 shrink-0">
+                  • {item.category}:
+                </span>
+                <span className="text-neutral-800">{item.skills}</span>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* Top 4 Projects */}
-      <section className="mb-2">
-        <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-neutral-900 border-b border-neutral-300 pb-0.5 mb-1">
-          Key Projects (Top 4 Full-Stack Works)
-        </h2>
-        <div className="space-y-1.5">
-          {top4Projects.map((p) => (
-            <div key={p.title} className="text-[10.5px]">
-              <div className="flex items-baseline justify-between">
+        {/* Top 4 Projects */}
+        <section className="mb-3">
+          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+            Key Projects (Top 4 Full-Stack Works)
+          </h2>
+          <div className="space-y-2">
+            {top4Projects.map((p) => (
+              <div key={p.title} className="text-[11.5px]">
+                <div className="flex items-baseline justify-between">
+                  <div>
+                    <strong className="text-neutral-950 text-[12.5px]">{p.title}</strong>
+                    <span className="text-neutral-700 ml-1.5">— {p.role}</span>
+                  </div>
+                  <div className="flex items-center gap-2 font-mono text-[11px] text-blue-700 print:text-neutral-800">
+                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">
+                      Live Demo
+                    </a>
+                    <span>|</span>
+                    <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">
+                      Code
+                    </a>
+                  </div>
+                </div>
+
+                <div className="text-[11px] text-neutral-600 font-mono mt-0.5">
+                  Tech Stack: {p.tech}
+                </div>
+
+                <ul className="list-disc list-outside pl-4 space-y-0.5 text-neutral-800 mt-1">
+                  {p.bullets.map((b, idx) => (
+                    <li key={idx}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Competitive Programming */}
+        <section className="mb-3">
+          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+            Competitive Programming &amp; Problem Solving
+          </h2>
+          <div className="text-[11.5px] text-neutral-800 space-y-0.5">
+            <p>
+              <strong className="text-neutral-950">• Codeforces:</strong> Solved <strong>150+ algorithmic problems</strong> focusing on Dynamic Programming, Data Structures, Graphs, and Logic Building.
+            </p>
+            <p>
+              <strong className="text-neutral-950">• Core Fundamentals:</strong> Proficient in C/C++ programming for memory management, pointers, and computational complexity optimization.
+            </p>
+          </div>
+        </section>
+
+        {/* Education (All 3 Included) */}
+        <section className="mb-3">
+          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+            Education
+          </h2>
+          <div className="space-y-1 text-[11.5px]">
+            {education.map((edu, idx) => (
+              <div key={idx} className="flex items-baseline justify-between">
                 <div>
-                  <strong className="text-neutral-950 text-[11px]">{p.title}</strong>
-                  <span className="text-neutral-700 ml-1">— {p.role}</span>
+                  <strong className="text-neutral-950">• {edu.degree}</strong>
+                  <span className="text-neutral-700 ml-1.5">— {edu.institution}</span>
                 </div>
-                <div className="flex items-center gap-1.5 font-mono text-[10px] text-blue-700 print:text-neutral-800">
-                  <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">
-                    Live Demo
-                  </a>
+                <div className="flex items-center gap-2 font-mono text-[11px] text-neutral-700 shrink-0">
+                  <span className="font-bold text-neutral-900">{edu.cgpa}</span>
                   <span>|</span>
-                  <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">
-                    Code
-                  </a>
+                  <span>{edu.period}</span>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              <div className="text-[10px] text-neutral-600 font-mono">
-                Tech Stack: {p.tech}
-              </div>
-
-              <ul className="list-disc list-outside pl-3.5 space-y-0.5 text-neutral-800 mt-0.5">
-                {p.bullets.map((b, idx) => (
-                  <li key={idx}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Competitive Programming */}
-      <section className="mb-2">
-        <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-neutral-900 border-b border-neutral-300 pb-0.5 mb-1">
-          Competitive Programming &amp; Problem Solving
-        </h2>
-        <div className="text-[10.5px] text-neutral-800 space-y-0.5">
-          <p>
-            <strong className="text-neutral-950">• Codeforces:</strong> Solved <strong>150+ algorithmic problems</strong> focusing on Dynamic Programming, Data Structures, Graphs, and Logic Building.
-          </p>
-          <p>
-            <strong className="text-neutral-950">• Core Fundamentals:</strong> Proficient in C/C++ programming for memory management, pointers, and computational complexity optimization.
-          </p>
-        </div>
-      </section>
-
-      {/* Education (All 3 Included) */}
-      <section className="mb-2">
-        <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-neutral-900 border-b border-neutral-300 pb-0.5 mb-1">
-          Education
-        </h2>
-        <div className="space-y-0.5 text-[10.5px]">
-          {education.map((edu, idx) => (
-            <div key={idx} className="flex items-baseline justify-between">
-              <div>
-                <strong className="text-neutral-950">• {edu.degree}</strong>
-                <span className="text-neutral-700 ml-1">— {edu.institution}</span>
-              </div>
-              <div className="flex items-center gap-2 font-mono text-[10px] text-neutral-700 shrink-0">
-                <span className="font-bold text-neutral-900">{edu.cgpa}</span>
-                <span>|</span>
-                <span>{edu.period}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section>
-        <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-neutral-900 border-b border-neutral-300 pb-0.5 mb-0.5">
-          Certifications
-        </h2>
-        <div className="text-[10.5px] text-neutral-800 flex flex-wrap gap-x-3 gap-y-0.5">
-          <span>• <strong>MERN Stack Development</strong> (Programming Hero)</span>
-          <span>• <strong>Data Analyst</strong> (Farhan Academy)</span>
-          <span>• <strong>Graphic Design</strong> (Global IT)</span>
-          <span>• <strong>Digital Marketing</strong> (National Skills Dev)</span>
-        </div>
-      </section>
+        {/* Certifications */}
+        <section>
+          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1">
+            Certifications
+          </h2>
+          <div className="text-[11.5px] text-neutral-800 flex flex-wrap gap-x-4 gap-y-1">
+            <span>• <strong>MERN Stack Development</strong> (Programming Hero)</span>
+            <span>• <strong>Data Analyst</strong> (Farhan Academy)</span>
+            <span>• <strong>Graphic Design</strong> (Global IT)</span>
+            <span>• <strong>Digital Marketing</strong> (National Skills Dev)</span>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

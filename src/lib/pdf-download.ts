@@ -1,11 +1,13 @@
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-export async function downloadCVAsPDF(elementId: string = "cv-document", fileName: string = "Md_Muhtasim_Zarif_Resume.pdf") {
+export async function downloadCVAsPDF(
+  elementId: string = "cv-document",
+  fileName: string = "Resume_Md_Muhtasim_Zarif.pdf"
+) {
   try {
     const element = document.getElementById(elementId);
     if (!element) {
-      // Fallback: download static file if element not found
       const link = document.createElement("a");
       link.href = "/Resume_Md_Muhtasim_Zarif.pdf";
       link.download = fileName;
@@ -13,13 +15,12 @@ export async function downloadCVAsPDF(elementId: string = "cv-document", fileNam
       return;
     }
 
-    // High resolution capture with white background
+    // High resolution capture (scale 2.5 for crisp vector-like text)
     const canvas = await html2canvas(element, {
       scale: 2.5,
       useCORS: true,
       backgroundColor: "#ffffff",
       logging: false,
-      windowWidth: 1024,
     });
 
     const imgData = canvas.toDataURL("image/jpeg", 0.98);
@@ -34,16 +35,12 @@ export async function downloadCVAsPDF(elementId: string = "cv-document", fileNam
 
     const pageWidth = 210;
     const pageHeight = 297;
-    const imgHeight = (canvas.height * pageWidth) / canvas.width;
 
-    // Center or scale to fit perfectly on 1 page
-    const finalHeight = Math.min(imgHeight, pageHeight);
-
-    pdf.addImage(imgData, "JPEG", 0, 0, pageWidth, finalHeight);
+    // Fill the A4 page smoothly from top to bottom without empty space at the bottom
+    pdf.addImage(imgData, "JPEG", 0, 0, pageWidth, pageHeight);
     pdf.save(fileName);
   } catch (error) {
     console.error("Auto PDF download error, using fallback:", error);
-    // Instant fallback to public PDF
     const link = document.createElement("a");
     link.href = "/Resume_Md_Muhtasim_Zarif.pdf";
     link.download = fileName;
