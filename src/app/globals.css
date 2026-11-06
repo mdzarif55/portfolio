@@ -117,28 +117,106 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Print styling for strict 1-page auto-built CV */
+/* Print styling for strict 1-page A4 auto-built CV */
 @media print {
   @page {
-    margin: 6mm 8mm;
     size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
   }
-  html, body {
+
+  /* Force pure clean white background everywhere in print, eliminating any dark mode surroundings */
+  html,
+  html.dark,
+  html.dark body,
+  body,
+  body.dark,
+  .dark,
+  [data-theme="dark"],
+  #__next,
+  div,
+  main,
+  section,
+  article,
+  header,
+  footer {
     background: #ffffff !important;
-    color: #000000 !important;
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide UI elements from print */
+  .print\:hidden,
+  button,
+  nav,
+  header.fixed {
+    display: none !important;
+  }
+
+  /* Strict A4 1-Page Fitting */
+  html,
+  body {
+    width: 210mm !important;
+    height: 100% !important;
+    max-height: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
+    overflow: hidden !important;
   }
+
   .cv-outer-box {
+    width: 100% !important;
+    max-width: 190mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
     border: none !important;
     border-width: 0 !important;
     box-shadow: none !important;
     outline: none !important;
+    background: #ffffff !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
-  * {
-    box-shadow: none !important;
+
+  .cv-outer-box section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 7px !important;
+  }
+
+  /* Ensure text colors in print are crisp black & dark gray */
+  .cv-outer-box h1,
+  .cv-outer-box h2,
+  .cv-outer-box strong {
+    color: #000000 !important;
+  }
+
+  .cv-outer-box p,
+  .cv-outer-box span,
+  .cv-outer-box li {
+    color: #1f2937 !important;
+  }
+
+  .cv-outer-box a {
+    color: #1d4ed8 !important;
+    text-decoration: none !important;
+  }
+
+  /* Clean subtle horizontal line dividers in print */
+  .cv-outer-box header {
+    border-bottom: 1.5px solid #374151 !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 7px !important;
+  }
+
+  .cv-outer-box section > h2 {
+    border-bottom: 1px solid #d1d5db !important;
+    padding-bottom: 2px !important;
+    margin-bottom: 4px !important;
   }
 }
 
