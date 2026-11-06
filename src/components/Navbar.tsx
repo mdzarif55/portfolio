@@ -22,7 +22,7 @@ export function Navbar({ onOpenResume }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { label: "About", href: "#about" },
+    // { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Algorithms", href: "#algorithms" },
