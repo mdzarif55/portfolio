@@ -24,9 +24,9 @@ export default function HomePage() {
       {/* Main Sections */}
       <main className="flex-1">
         <Hero onOpenResume={() => setIsResumeModalOpen(true)} />
-        <About onOpenResume={() => setIsResumeModalOpen(true)} />
         <Skills />
         <Projects />
+        {/* <About onOpenResume={() => setIsResumeModalOpen(true)} /> */}
         <CompetitiveCoding />
         <ExperienceEducation />
         <Contact />

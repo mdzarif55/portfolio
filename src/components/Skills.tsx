@@ -4,24 +4,27 @@ import { useState } from "react";
 import {
   Code2,
   Server,
-  BarChart3,
+  Database,
+  CreditCard,
   Wrench,
+  Network,
+  Cpu,
   Layers,
   Sparkles,
-  CheckCircle,
-  Cpu,
 } from "lucide-react";
-import { portfolioData, SkillCategory } from "@/data/portfolio-data";
+import { portfolioData } from "@/data/portfolio-data";
 
 export function Skills() {
   const { skillCategories } = portfolioData;
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
   const categoryIcons: Record<string, any> = {
-    "Frontend & Mobile": Code2,
-    "Backend & Database": Server,
-    "Data Analysis & Testing": BarChart3,
-    "Tools, Design & Platforms": Wrench,
+    "Frontend Development": Code2,
+    "Backend Development": Server,
+    "Database": Database,
+    "Payment & Integration": CreditCard,
+    "Tools & Platforms": Wrench,
+    "Other Skills & Fundamentals": Network,
   };
 
   const filteredCategories =
@@ -39,29 +42,29 @@ export function Skills() {
             <span>Technical Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white">
-            Comprehensive Technical Skills
+            Technical Skills &amp; Stack
           </h2>
           <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg">
-            Mastering full-stack web architectures, cross-platform mobile frameworks, and algorithmic data design.
+            A comprehensive overview of my frontend, backend, database, payment integrations, system tools, and algorithmic problem solving proficiencies.
           </p>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
             <button
               onClick={() => setActiveCategory("All")}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                 activeCategory === "All"
                   ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
                   : "bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700"
               }`}
             >
-              All Categories
+              All Skills ({skillCategories.reduce((acc, c) => acc + c.skills.length, 0)})
             </button>
             {skillCategories.map((cat) => (
               <button
                 key={cat.title}
                 onClick={() => setActiveCategory(cat.title)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                   activeCategory === cat.title
                     ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
                     : "bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700"
@@ -73,53 +76,59 @@ export function Skills() {
           </div>
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Categories Grid - 3 columns for balanced 6 categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCategories.map((category) => {
             const Icon = categoryIcons[category.title] || Layers;
             return (
               <div
                 key={category.title}
-                className="group p-6 sm:p-8 rounded-2xl bg-white dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-xl hover:border-blue-500/40 transition-all duration-300"
+                className="group flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-xl hover:border-blue-500/40 transition-all duration-300"
               >
-                {/* Category Header */}
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/60 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-neutral-900 dark:text-white text-lg sm:text-xl">
-                      {category.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-                      {category.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Skills Chips */}
-                <div className="flex flex-wrap gap-2.5 pt-3">
-                  {category.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
-                        skill.featured
-                          ? "bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/70 shadow-sm"
-                          : "bg-neutral-100 dark:bg-neutral-800/60 text-neutral-700 dark:text-neutral-300 border border-neutral-200/80 dark:border-neutral-700/60"
-                      } hover:-translate-y-0.5 hover:shadow-sm`}
-                    >
-                      <span>{skill.name}</span>
-                      <span
-                        className={`text-[10px] px-1.5 py-0.5 rounded-md font-mono ${
-                          skill.level === "Expert" || skill.level === "Advanced"
-                            ? "bg-blue-600/15 text-blue-700 dark:text-blue-300 font-bold"
-                            : "bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400"
-                        }`}
-                      >
-                        {skill.level}
+                <div>
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3.5 mb-3">
+                    <div className="w-11 h-11 rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/60 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-105 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shrink-0">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-neutral-900 dark:text-white text-base sm:text-lg">
+                        {category.title}
+                      </h3>
+                      <span className="text-[11px] text-blue-600 dark:text-blue-400 font-mono">
+                        {category.skills.length} skills
                       </span>
                     </div>
-                  ))}
+                  </div>
+
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-4 leading-relaxed">
+                    {category.description}
+                  </p>
+
+                  {/* Skills Chips */}
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {category.skills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                          skill.featured
+                            ? "bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/70 shadow-sm"
+                            : "bg-neutral-100 dark:bg-neutral-800/60 text-neutral-700 dark:text-neutral-300 border border-neutral-200/80 dark:border-neutral-700/60"
+                        } hover:-translate-y-0.5 hover:shadow-sm`}
+                      >
+                        <span>{skill.name}</span>
+                        <span
+                          className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${
+                            skill.level === "Expert" || skill.level === "Advanced"
+                              ? "bg-blue-600/15 text-blue-700 dark:text-blue-300 font-bold"
+                              : "bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400"
+                          }`}
+                        >
+                          {skill.level}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             );
