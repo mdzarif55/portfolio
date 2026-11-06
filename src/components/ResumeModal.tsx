@@ -6,12 +6,12 @@ import {
   Download,
   ExternalLink,
   FileText,
-  Printer,
-  Sparkles,
-  Layers,
+  Loader2,
+  CheckCircle2,
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { CVDocument } from "./CVDocument";
+import { downloadCVAsPDF } from "@/lib/pdf-download";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -21,6 +21,8 @@ interface ResumeModalProps {
 
 export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
   const [viewMode, setViewMode] = useState<"auto" | "original">("auto");
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [downloadSuccess, setDownloadSuccess] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -40,9 +42,24 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
 
   if (!isOpen) return null;
 
-  const handlePrint = () => {
-    // Open /cv in new tab or trigger print
-    window.open("/cv", "_blank");
+  const handleDownloadAuto = async () => {
+    try {
+      setIsDownloading(true);
+      confetti({
+        particleCount: 50,
+        spread: 70,
+        origin: { y: 0.7 },
+      });
+
+      await downloadCVAsPDF("modal-cv-document", "Resume_Md_Muhtasim_Zarif.pdf");
+
+      setDownloadSuccess(true);
+      setTimeout(() => setDownloadSuccess(false), 3000);
+    } catch (err) {
+      console.error("Download error:", err);
+    } finally {
+      setIsDownloading(false);
+    }
   };
 
   return (
@@ -63,7 +80,7 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
                 Curriculum Vitae — Md. Muhtasim Zarif
               </h3>
               <p className="text-[11px] text-neutral-500 dark:text-neutral-400">
-                Auto-built with latest skills, education, and projects
+                Full-Stack Developer • 1-Page Auto-Built CV
               </p>
             </div>
           </div>
@@ -95,15 +112,31 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
               </button>
             </div>
 
+            {/* Direct Auto Download Button */}
             {viewMode === "auto" ? (
               <button
-                onClick={handlePrint}
+                onClick={handleDownloadAuto}
+                disabled={isDownloading}
                 type="button"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white border-0 outline-none focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors"
-                title="Print or Save as PDF"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white border-0 outline-none focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors cursor-pointer"
+                title="Download 1-page PDF directly"
               >
-                <Printer className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Print / Save PDF</span>
+                {isDownloading ? (
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    <span>Preparing...</span>
+                  </>
+                ) : downloadSuccess ? (
+                  <>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" />
+                    <span>Downloaded</span>
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download PDF</span>
+                  </>
+                )}
               </button>
             ) : (
               <a
@@ -112,7 +145,7 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Download</span>
+                <span>Download PDF</span>
               </a>
             )}
 
@@ -121,7 +154,7 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 rounded-lg text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-              title="Open full page"
+              title="Open full-page view"
             >
               <ExternalLink className="w-4 h-4" />
             </a>
@@ -139,7 +172,7 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
         {/* Modal Body */}
         <div className="flex-1 w-full h-full bg-neutral-100 dark:bg-neutral-950 p-2 sm:p-4 overflow-y-auto">
           {viewMode === "auto" ? (
-            <div className="max-w-3xl mx-auto py-2">
+            <div id="modal-cv-document" className="max-w-3xl mx-auto py-2">
               <CVDocument />
             </div>
           ) : (
