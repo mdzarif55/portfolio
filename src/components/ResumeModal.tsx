@@ -99,7 +99,7 @@ export function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProps) {
               <button
                 onClick={handlePrint}
                 type="button"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white border-0 outline-none focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors"
                 title="Print or Save as PDF"
               >
                 <Printer className="w-3.5 h-3.5" />

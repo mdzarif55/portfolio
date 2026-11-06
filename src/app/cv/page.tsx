@@ -33,7 +33,7 @@ export default function CVPage() {
           <button
             onClick={handlePrint}
             type="button"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white shadow-md shadow-blue-500/20 border-0 outline-none focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all hover:-translate-y-0.5 active:translate-y-0"
           >
             <Printer className="w-4 h-4" />
             <span>Print / Save as PDF</span>

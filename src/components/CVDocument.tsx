@@ -87,7 +87,7 @@ export function CVDocument() {
   ];
 
   return (
-    <div className="w-full max-w-[800px] mx-auto bg-white text-neutral-900 px-6 py-5 sm:px-8 sm:py-6 shadow-md border border-neutral-200 rounded-lg print:border-0 print:shadow-none print:p-0 print:m-0 print:max-w-none font-sans text-[11px] leading-[1.35] tracking-tight">
+    <div className="cv-outer-box w-full max-w-[800px] mx-auto bg-white text-neutral-900 px-6 py-5 sm:px-8 sm:py-6 shadow-md border border-neutral-200 rounded-lg print:border-none print:shadow-none print:p-0 print:m-0 print:max-w-none print:rounded-none font-sans text-[11px] leading-[1.35] tracking-tight">
       {/* Header */}
       <header className="border-b border-neutral-800 pb-2 mb-2 text-center">
         <h1 className="text-xl sm:text-2xl font-black tracking-tight text-neutral-950 uppercase leading-none">
