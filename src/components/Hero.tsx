@@ -251,7 +251,7 @@ export function Hero({ onOpenResume }: HeroProps) {
                     <div className="space-y-2 pt-1 border-t border-neutral-200 dark:border-neutral-800">
                       <div className="flex items-center justify-between text-xs text-neutral-500">
                         <span>Pinned Live Deployments</span>
-                        <span className="font-mono text-[10px] text-blue-500">5 Live on Vercel</span>
+                        <span className="font-mono text-[10px] text-blue-500">Top 3 Live on Vercel</span>
                       </div>
                       <div className="space-y-1.5">
                         <a
@@ -261,7 +261,7 @@ export function Hero({ onOpenResume }: HeroProps) {
                           className="flex items-center justify-between px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800/60 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-xs"
                         >
                           <span className="font-medium text-neutral-900 dark:text-neutral-100">
-                            StudioSpace — Creative Venue Platform
+                            1. StudioSpace — Creative Venue Platform
                           </span>
                           <ExternalLink className="w-3.5 h-3.5 text-neutral-400" />
                         </a>
@@ -272,18 +272,18 @@ export function Hero({ onOpenResume }: HeroProps) {
                           className="flex items-center justify-between px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800/60 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-xs"
                         >
                           <span className="font-medium text-neutral-900 dark:text-neutral-100">
-                            Medicare Solution — Full-Stack Health
+                            2. Medicare Solution — Full-Stack Health
                           </span>
                           <ExternalLink className="w-3.5 h-3.5 text-neutral-400" />
                         </a>
                         <a
-                          href="https://bajar-dor-ruddy.vercel.app/"
+                          href="https://fit-log-theta-ebon.vercel.app/"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center justify-between px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800/60 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors text-xs"
                         >
                           <span className="font-medium text-neutral-900 dark:text-neutral-100">
-                            Bajar Dor — BD Daily Market Price
+                            3. FitLog — Workout & Exercise Library
                           </span>
                           <ExternalLink className="w-3.5 h-3.5 text-neutral-400" />
                         </a>

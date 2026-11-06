@@ -231,6 +231,32 @@ export const portfolioData: PortfolioData = {
       },
     },
     {
+      id: "fit-log",
+      title: "FitLog",
+      subtitle: "High-Performance Workout Tracking & Exercise Library",
+      description:
+        "Train with intent. Log every set. Intuitive fitness tracker and movement library designed for dedicated lifters and athletes.",
+      fullDescription:
+        "FitLog empowers fitness enthusiasts to train with deliberate intent. It provides an extensive exercise movement library (Bench Press, Pull-Ups, Back Squats, Overhead Press, Bicep Curls, Core Planks) along with set-by-set logging, rep tracking, and progressive overload analytics.",
+      category: "Web App",
+      liveUrl: "https://fit-log-theta-ebon.vercel.app/",
+      githubUrl: "https://github.com/mdzarif55/fit-log",
+      featured: true,
+      tags: ["TypeScript", "React", "Tailwind CSS", "Fitness Companion", "Dark UI"],
+      features: [
+        "Extensive curated exercise movement library with form cues and muscle groups",
+        "Intuitive set-and-rep logger supporting weight, repetitions, and intensity rating",
+        "Progressive overload tracking designed for quick in-gym session logging",
+        "High-contrast dark-mode first aesthetic built for athletic focus",
+      ],
+      metrics: "Fitness Logger",
+      colorScheme: {
+        from: "from-cyan-500/20",
+        to: "to-blue-500/20",
+        accent: "border-cyan-500/30 text-cyan-500",
+      },
+    },
+    {
       id: "bajar-dor",
       title: "Bajar Dor (বাজার দর)",
       subtitle: "Daily Commodity & Grocery Market Price Analytics in Bangladesh",
@@ -280,32 +306,6 @@ export const portfolioData: PortfolioData = {
         from: "from-red-500/20",
         to: "to-rose-500/20",
         accent: "border-red-500/30 text-red-500",
-      },
-    },
-    {
-      id: "fit-log",
-      title: "FitLog",
-      subtitle: "High-Performance Workout Tracking & Exercise Library",
-      description:
-        "Train with intent. Log every set. Intuitive fitness tracker and movement library designed for dedicated lifters and athletes.",
-      fullDescription:
-        "FitLog empowers fitness enthusiasts to train with deliberate intent. It provides an extensive exercise movement library (Bench Press, Pull-Ups, Back Squats, Overhead Press, Bicep Curls, Core Planks) along with set-by-set logging, rep tracking, and progressive overload analytics.",
-      category: "Web App",
-      liveUrl: "https://fit-log-theta-ebon.vercel.app/",
-      githubUrl: "https://github.com/mdzarif55/fit-log",
-      featured: true,
-      tags: ["TypeScript", "React", "Tailwind CSS", "Fitness Companion", "Dark UI"],
-      features: [
-        "Extensive curated exercise movement library with form cues and muscle groups",
-        "Intuitive set-and-rep logger supporting weight, repetitions, and intensity rating",
-        "Progressive overload tracking designed for quick in-gym session logging",
-        "High-contrast dark-mode first aesthetic built for athletic focus",
-      ],
-      metrics: "Fitness Logger",
-      colorScheme: {
-        from: "from-cyan-500/20",
-        to: "to-blue-500/20",
-        accent: "border-cyan-500/30 text-cyan-500",
       },
     },
     {
