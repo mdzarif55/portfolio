@@ -8,8 +8,9 @@ export async function downloadCVAsPDF(
   try {
     let element = document.getElementById(elementId);
     if (!element) {
-      // Fallback search by class or default id
-      element = document.getElementById("cv-document") || document.querySelector(".cv-outer-box");
+      element =
+        document.getElementById("cv-document") ||
+        document.querySelector(".cv-outer-box");
     }
 
     if (!element) {
@@ -20,7 +21,18 @@ export async function downloadCVAsPDF(
       return;
     }
 
-    // Capture bounding rect and all clickable links BEFORE html2canvas modifies anything
+    // Save previous styles to prevent any border or shadow lines from leaking into canvas
+    const prevBorder = element.style.border;
+    const prevShadow = element.style.boxShadow;
+    const prevOutline = element.style.outline;
+    const prevRadius = element.style.borderRadius;
+
+    element.style.border = "none";
+    element.style.boxShadow = "none";
+    element.style.outline = "none";
+    element.style.borderRadius = "0px";
+
+    // Capture bounding rect and clickable links BEFORE rendering
     const containerRect = element.getBoundingClientRect();
     const anchorElements = Array.from(element.querySelectorAll("a[href]"));
 
@@ -31,14 +43,10 @@ export async function downloadCVAsPDF(
         const href = anchor.href;
         if (!href) return null;
 
-        // Ensure relative coordinates inside the element
-        const relLeft = rect.left - containerRect.left;
-        const relTop = rect.top - containerRect.top;
-
         return {
           href,
-          relLeft,
-          relTop,
+          relLeft: rect.left - containerRect.left,
+          relTop: rect.top - containerRect.top,
           relWidth: rect.width,
           relHeight: rect.height,
         };
@@ -51,13 +59,19 @@ export async function downloadCVAsPDF(
         relHeight: number;
       }[];
 
-    // High resolution capture (scale 2.5 for crisp vector-like text)
+    // High resolution capture (scale 2.5 for crisp text, strictly no borders)
     const canvas = await html2canvas(element, {
       scale: 2.5,
       useCORS: true,
       backgroundColor: "#ffffff",
       logging: false,
     });
+
+    // Restore original styles
+    element.style.border = prevBorder;
+    element.style.boxShadow = prevShadow;
+    element.style.outline = prevOutline;
+    element.style.borderRadius = prevRadius;
 
     const imgData = canvas.toDataURL("image/jpeg", 0.98);
 
@@ -72,17 +86,22 @@ export async function downloadCVAsPDF(
     const pageWidth = 210;
     const pageHeight = 297;
 
-    // Fill the A4 page smoothly from top to bottom without empty space at the bottom
-    pdf.addImage(imgData, "JPEG", 0, 0, pageWidth, pageHeight);
+    // Clean standard print margin (8mm margins on all sides)
+    const marginX = 8;
+    const marginY = 8;
+    const printWidth = pageWidth - marginX * 2; // 194mm
+    const printHeight = pageHeight - marginY * 2; // 281mm
 
-    // Add active clickable hyperlink annotations corresponding to all links in the document
-    const scaleX = pageWidth / containerRect.width;
-    const scaleY = pageHeight / containerRect.height;
+    // Render image centered within A4 margins (guaranteeing zero line at top or bottom edge)
+    pdf.addImage(imgData, "JPEG", marginX, marginY, printWidth, printHeight);
+
+    // Add clickable hyperlink annotations with exact margin offsets
+    const scaleX = printWidth / containerRect.width;
+    const scaleY = printHeight / containerRect.height;
 
     for (const link of linksData) {
-      const x = link.relLeft * scaleX;
-      const y = link.relTop * scaleY;
-      // Provide comfortable clickable hotspot area
+      const x = marginX + link.relLeft * scaleX;
+      const y = marginY + link.relTop * scaleY;
       const w = Math.max(link.relWidth * scaleX, 5);
       const h = Math.max(link.relHeight * scaleY, 4);
 

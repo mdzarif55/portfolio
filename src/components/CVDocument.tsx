@@ -2,13 +2,6 @@
 
 import React from "react";
 import { portfolioData } from "@/data/portfolio-data";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  Linkedin,
-} from "lucide-react";
 
 export function CVDocument() {
   const { personal, education } = portfolioData;
@@ -88,11 +81,12 @@ export function CVDocument() {
   return (
     <div
       id="cv-document"
-      className="cv-outer-box w-full max-w-[794px] min-h-[1080px] flex flex-col justify-between mx-auto bg-white text-neutral-900 p-8 sm:p-9 shadow-md border border-neutral-200 rounded-lg print:border-none print:shadow-none print:p-0 print:m-0 print:max-w-none print:min-h-0 print:rounded-none font-sans text-[12px] leading-[1.45] tracking-tight"
+      className="cv-outer-box w-full max-w-[760px] mx-auto bg-white text-neutral-900 p-8 sm:p-9 border-0 outline-none shadow-none font-sans text-[11.5px] leading-[1.45] tracking-tight select-text"
+      style={{ border: "none", outline: "none", boxShadow: "none" }}
     >
       <div>
         {/* Header */}
-        <header className="border-b-2 border-neutral-900 pb-2.5 mb-3 text-center">
+        <header className="border-b border-neutral-700 pb-2 mb-3 text-center">
           <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase leading-none">
             {personal.name}
           </h1>
@@ -100,15 +94,15 @@ export function CVDocument() {
             Full-Stack Developer • MERN &amp; Cross-Platform
           </p>
 
-          {/* Contact Info Row */}
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mt-1.5 text-[11.5px] text-neutral-700 font-medium">
+          {/* Contact Info Row without overlapping underlines */}
+          <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 mt-1.5 text-[11px] text-neutral-700 font-medium">
             <span>{personal.location}</span>
             <span>|</span>
-            <a href={`tel:${personal.phone}`} className="hover:underline font-mono">
+            <a href={`tel:${personal.phone}`} className="font-mono text-neutral-800 no-underline hover:text-blue-700">
               {personal.phone}
             </a>
             <span>|</span>
-            <a href={`mailto:${personal.email}`} className="hover:underline text-blue-700">
+            <a href={`mailto:${personal.email}`} className="text-blue-700 no-underline hover:text-blue-800">
               {personal.email}
             </a>
             <span>|</span>
@@ -116,7 +110,7 @@ export function CVDocument() {
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline text-blue-700 font-mono"
+              className="text-blue-700 font-mono no-underline hover:text-blue-800"
             >
               github.com/mdzarif55
             </a>
@@ -125,7 +119,7 @@ export function CVDocument() {
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline text-blue-700 font-mono"
+              className="text-blue-700 font-mono no-underline hover:text-blue-800"
             >
               linkedin.com/in/mdzarif55
             </a>
@@ -133,24 +127,24 @@ export function CVDocument() {
         </header>
 
         {/* Career Summary */}
-        <section className="mb-3">
-          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+        <section className="mb-2.5">
+          <h2 className="text-[11.5px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1 mb-1.5">
             Career Objective
           </h2>
-          <p className="text-neutral-800 text-justify text-[11.5px] leading-relaxed">
+          <p className="text-neutral-800 text-justify text-[11px] leading-relaxed">
             Passionate Full-Stack Developer skilled in building clean, responsive web and cross-platform applications. Proficient in Next.js, React.js, Node.js, Express, MongoDB, PostgreSQL, and modern API architectures. Proven problem-solving capabilities developed through competitive programming (150+ Codeforces problems). Seeking a Full-Stack / React Developer role to engineer scalable user experiences and drive robust technical solutions.
           </p>
         </section>
 
         {/* Technical Skills (Curated Best for Full Stack) */}
-        <section className="mb-3">
-          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+        <section className="mb-2.5">
+          <h2 className="text-[11.5px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1 mb-1.5">
             Technical Skills (Full-Stack)
           </h2>
-          <div className="space-y-1 text-[11.5px]">
+          <div className="space-y-1 text-[11px]">
             {fullStackSkills.map((item) => (
               <div key={item.category} className="flex items-baseline">
-                <span className="font-bold text-neutral-950 w-32 shrink-0">
+                <span className="font-bold text-neutral-950 w-28 shrink-0">
                   • {item.category}:
                 </span>
                 <span className="text-neutral-800">{item.skills}</span>
@@ -160,34 +154,44 @@ export function CVDocument() {
         </section>
 
         {/* Top 4 Projects */}
-        <section className="mb-3">
-          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+        <section className="mb-2.5">
+          <h2 className="text-[11.5px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1 mb-1.5">
             Key Projects (Top 4 Full-Stack Works)
           </h2>
           <div className="space-y-2">
             {top4Projects.map((p) => (
-              <div key={p.title} className="text-[11.5px]">
+              <div key={p.title} className="text-[11px]">
                 <div className="flex items-baseline justify-between">
                   <div>
-                    <strong className="text-neutral-950 text-[12.5px]">{p.title}</strong>
+                    <strong className="text-neutral-950 text-[12px]">{p.title}</strong>
                     <span className="text-neutral-700 ml-1.5">— {p.role}</span>
                   </div>
-                  <div className="flex items-center gap-2 font-mono text-[11px] text-blue-700 print:text-neutral-800">
-                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">
-                      Live Demo
+                  <div className="flex items-center gap-2 font-mono text-[10.5px]">
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-blue-700 no-underline hover:text-blue-900"
+                    >
+                      [Live Demo]
                     </a>
                     <span>|</span>
-                    <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">
-                      Code
+                    <a
+                      href={p.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-blue-700 no-underline hover:text-blue-900"
+                    >
+                      [Code]
                     </a>
                   </div>
                 </div>
 
-                <div className="text-[11px] text-neutral-600 font-mono mt-0.5">
+                <div className="text-[10.5px] text-neutral-600 font-mono mt-0.5">
                   Tech Stack: {p.tech}
                 </div>
 
-                <ul className="list-disc list-outside pl-4 space-y-0.5 text-neutral-800 mt-1">
+                <ul className="list-disc list-outside pl-4 space-y-0.5 text-neutral-800 mt-0.5">
                   {p.bullets.map((b, idx) => (
                     <li key={idx}>{b}</li>
                   ))}
@@ -198,11 +202,11 @@ export function CVDocument() {
         </section>
 
         {/* Competitive Programming */}
-        <section className="mb-3">
-          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+        <section className="mb-2.5">
+          <h2 className="text-[11.5px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1 mb-1.5">
             Competitive Programming &amp; Problem Solving
           </h2>
-          <div className="text-[11.5px] text-neutral-800 space-y-0.5">
+          <div className="text-[11px] text-neutral-800 space-y-0.5">
             <p>
               <strong className="text-neutral-950">• Codeforces:</strong> Solved <strong>150+ algorithmic problems</strong> focusing on Dynamic Programming, Data Structures, Graphs, and Logic Building.
             </p>
@@ -213,18 +217,18 @@ export function CVDocument() {
         </section>
 
         {/* Education (All 3 Included) */}
-        <section className="mb-3">
-          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1.5">
+        <section className="mb-2.5">
+          <h2 className="text-[11.5px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1 mb-1.5">
             Education
           </h2>
-          <div className="space-y-1 text-[11.5px]">
+          <div className="space-y-0.5 text-[11px]">
             {education.map((edu, idx) => (
               <div key={idx} className="flex items-baseline justify-between">
                 <div>
                   <strong className="text-neutral-950">• {edu.degree}</strong>
-                  <span className="text-neutral-700 ml-1.5">— {edu.institution}</span>
+                  <span className="text-neutral-700 ml-1">— {edu.institution}</span>
                 </div>
-                <div className="flex items-center gap-2 font-mono text-[11px] text-neutral-700 shrink-0">
+                <div className="flex items-center gap-2 font-mono text-[10.5px] text-neutral-700 shrink-0">
                   <span className="font-bold text-neutral-900">{edu.cgpa}</span>
                   <span>|</span>
                   <span>{edu.period}</span>
@@ -236,10 +240,10 @@ export function CVDocument() {
 
         {/* Certifications */}
         <section>
-          <h2 className="text-[12px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5 mb-1">
+          <h2 className="text-[11.5px] font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1 mb-1">
             Certifications
           </h2>
-          <div className="text-[11.5px] text-neutral-800 flex flex-wrap gap-x-4 gap-y-1">
+          <div className="text-[11px] text-neutral-800 flex flex-wrap gap-x-4 gap-y-0.5">
             <span>• <strong>MERN Stack Development</strong> (Programming Hero)</span>
             <span>• <strong>Data Analyst</strong> (Farhan Academy)</span>
             <span>• <strong>Graphic Design</strong> (Global IT)</span>
