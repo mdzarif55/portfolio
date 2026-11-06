@@ -2,6 +2,7 @@
 
 import { ArrowUp, Github, Linkedin, Mail, Heart } from "lucide-react";
 import { portfolioData } from "@/data/portfolio-data";
+import { FacebookIcon } from "@/components/SocialIcons";
 
 export function Footer() {
   const { personal } = portfolioData;
@@ -44,6 +45,16 @@ export function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
+            </a>
+
+            <a
+              href={personal.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="Facebook"
+            >
+              <FacebookIcon className="w-4 h-4" />
             </a>
 
             <a

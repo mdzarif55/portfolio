@@ -18,6 +18,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolio-data";
+import { FacebookIcon } from "@/components/SocialIcons";
 
 interface HeroProps {
   onOpenResume: () => void;
@@ -119,6 +120,16 @@ export function Hero({ onOpenResume }: HeroProps) {
               >
                 <Linkedin className="w-4 h-4 text-blue-500" />
                 <span>LinkedIn</span>
+              </a>
+
+              <a
+                href={personal.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all bg-white/50 dark:bg-neutral-900/50"
+              >
+                <FacebookIcon className="w-4 h-4 text-blue-600" />
+                <span>Facebook</span>
               </a>
 
               <a

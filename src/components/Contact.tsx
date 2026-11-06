@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { portfolioData } from "@/data/portfolio-data";
+import { FacebookIcon } from "@/components/SocialIcons";
 
 export function Contact() {
   const { personal } = portfolioData;
@@ -201,6 +202,16 @@ export function Contact() {
                   >
                     <Linkedin className="w-4 h-4 text-blue-500" />
                     <span>LinkedIn Profile</span>
+                  </a>
+
+                  <a
+                    href={personal.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border border-neutral-200 dark:border-neutral-700 hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:text-blue-600 dark:hover:text-blue-400 text-neutral-800 dark:text-neutral-200 transition-colors"
+                  >
+                    <FacebookIcon className="w-4 h-4 text-blue-600" />
+                    <span>Facebook Profile</span>
                   </a>
                 </div>
               </div>

@@ -60,6 +60,7 @@ export interface PortfolioData {
     location: string;
     availability: string;
     github: string;
+    facebook: string;
     linkedin: string;
     avatarUrl: string;
     resumePdfUrl: string;
@@ -94,6 +95,7 @@ export const portfolioData: PortfolioData = {
     location: "Dhaka, Bangladesh",
     availability: "Available for Full-time Roles & Contracts",
     github: "https://github.com/mdzarif55",
+    facebook:"https://facebook.com/mdzarif55",
     linkedin: "https://linkedin.com/in/mdzarif55",
     avatarUrl: "https://avatars.githubusercontent.com/u/146372499?v=4",
     resumePdfUrl: "/Resume_Md_Muhtasim_Zarif.pdf",
