@@ -41,22 +41,22 @@ export function ExperienceEducation() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Education */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-6 space-y-6">
             <h3 className="text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
               <BookOpen className="w-5 h-5 text-blue-500" />
-              <span>Formal Education</span>
+              <span>Formal Education ({education.length})</span>
             </h3>
 
             {education.map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 sm:p-7 rounded-2xl bg-white dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4 hover:border-blue-500/40 transition-colors"
+                className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-3.5 hover:border-blue-500/40 transition-colors"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h4 className="font-bold text-neutral-900 dark:text-white text-lg">
+                    <h4 className="font-bold text-neutral-900 dark:text-white text-base sm:text-lg">
                       {item.degree}
                     </h4>
                     <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
@@ -64,7 +64,7 @@ export function ExperienceEducation() {
                     </p>
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 shrink-0">
-                    CGPA {item.cgpa}
+                    {item.cgpa}
                   </span>
                 </div>
 
@@ -75,16 +75,16 @@ export function ExperienceEducation() {
                   </div>
                   <div className="flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5" />
-                    <span>Graduated</span>
+                    <span>{item.period}</span>
                   </div>
                 </div>
 
-                <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
                   {item.description}
                 </p>
 
-                <div className="space-y-2 pt-2 border-t border-neutral-200 dark:border-neutral-800">
-                  <span className="text-xs font-mono uppercase text-neutral-500 dark:text-neutral-400 block">
+                <div className="space-y-1.5 pt-2 border-t border-neutral-200 dark:border-neutral-800">
+                  <span className="text-[11px] font-mono uppercase text-neutral-500 dark:text-neutral-400 block">
                     Key Highlights
                   </span>
                   {item.highlights.map((highlight, hIdx) => (
@@ -99,10 +99,10 @@ export function ExperienceEducation() {
           </div>
 
           {/* Right Column: Certifications */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-6 space-y-6">
             <h3 className="text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
               <Award className="w-5 h-5 text-emerald-500" />
-              <span>Specialized Certifications</span>
+              <span>Specialized Certifications ({certifications.length})</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
