@@ -46,7 +46,7 @@ export function ExperienceEducation() {
           <div className="lg:col-span-6 space-y-6">
             <h3 className="text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
               <BookOpen className="w-5 h-5 text-blue-500" />
-              <span>Formal Education ({education.length})</span>
+              <span>Education </span>
             </h3>
 
             {education.map((item, idx) => (
@@ -102,7 +102,7 @@ export function ExperienceEducation() {
           <div className="lg:col-span-6 space-y-6">
             <h3 className="text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
               <Award className="w-5 h-5 text-emerald-500" />
-              <span>Specialized Certifications ({certifications.length})</span>
+              <span>Specialized Certifications</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

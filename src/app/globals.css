@@ -116,3 +116,22 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Print styling for strict 1-page auto-built CV */
+@media print {
+  @page {
+    margin: 6mm 8mm;
+    size: A4 portrait;
+  }
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  * {
+    box-shadow: none !important;
+  }
+}
