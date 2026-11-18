@@ -13,12 +13,14 @@ Featuring **Light & Dark mode** with zero hydration flash, interactive live proj
 - 🚀 **Featured Live Project Showcases**:
   - **StudioSpace**: Peer-to-Peer Creative Workspace & Production Studio Sharing Platform ([Live](https://studio-space-eosin.vercel.app/))
   - **Medicare Solution**: Full-Stack Online Medicine & Health Service E-Commerce ([Live](https://medicare-solution.vercel.app/))
-  - **Bajar Dor (বাজার দর)**: Real-time Bangladesh Daily Commodity & Grocery Price Tracker ([Live](https://bajar-dor-ruddy.vercel.app/))
-  - **Bangla News 24**: Next-Gen Bengali Digital News Portal & Media Outlet ([Live](https://bangla-news-24.vercel.app/))
+  - **Trans Team Ltd. (TTL)**: International Freight Forwarding & Multi-Modal Logistics Platform ([Live](https://trans-team-ltd.vercel.app))
   - **FitLog**: High-Performance Workout Tracking & Exercise Movement Library ([Live](https://fit-log-theta-ebon.vercel.app/))
+  - **Bajar Dor (বাজার দর)**: Real-time Bangladesh Daily Commodity & Grocery Price Tracker ([Live](https://bajar-dor-ruddy.vercel.app/))
+  - **SongbadSudhhi (সংবাদ শুদ্ধি)**: Bangla Grammar Checker & Professional Newsroom Proofreader ([Live](https://songbad-suddhi-bangla-grammer-check.vercel.app/))
+  - **Bangla News 24**: Next-Gen Bengali Digital News Portal & Media Outlet ([Live](https://bangla-news-24.vercel.app/))
   - **DevStack**, **FIFA World Cup 2026**, **Dev Conference**, and more.
 - 🔍 **Interactive Live Preview Modal**: Test live Vercel deployments inside an in-browser sandbox preview modal without navigating away.
-- 📄 **Integrated Resume Viewer & Downloader**: Direct download or embedded preview of `Resume_Md_Muhtasim_Zarif.pdf`.
+- 📄 **Auto-Built 1-Page CV & Instant PDF Download**: Built-in A4 single-page resume generator powered by `html2canvas` & `jsPDF` with clickable Live Demo, Code, GitHub, LinkedIn, and Email hyperlinks, alongside the original `Resume_Md_Muhtasim_Zarif.pdf` viewer.
 - 🧠 **Competitive Programming & Problem Solving**: Showcases 150+ Codeforces problems solved, Dynamic Programming mastery, and C memory management foundations.
 - 🎓 **Education & Certifications**:
   - BSc in Computer Science & Engineering, Daffodil Institute of IT (CGPA 3.18)
@@ -35,6 +37,7 @@ Featuring **Light & Dark mode** with zero hydration flash, interactive live proj
 - **Theme Provider**: [`next-themes`](https://github.com/pacocoursey/next-themes)
 - **Icons**: [`lucide-react`](https://lucide.dev/)
 - **Animations & Effects**: [`canvas-confetti`](https://www.npmjs.com/package/canvas-confetti)
+- **PDF Generation**: [`jsPDF`](https://github.com/parallax/jsPDF) & [`html2canvas`](https://html2canvas.hertzen.com/)
 - **Deployment Ready**: Optimized for [Vercel](https://vercel.com)
 
 ---
