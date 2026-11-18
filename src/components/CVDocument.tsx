@@ -55,6 +55,17 @@ export function CVDocument() {
       ],
     },
     {
+      title: "Trans Team Ltd. (TTL)",
+      role: "International Freight & Multi-Modal Logistics Platform",
+      liveUrl: "https://trans-team-ltd.vercel.app",
+      githubUrl: "https://github.com/mdzarif55/trans-team-ltd",
+      tech: "Next.js 14, TypeScript, Tailwind CSS, Framer Motion, Swiper",
+      bullets: [
+        "Engineered corporate logistics platform for RMK Group spanning 42 static and dynamic App Router pages.",
+        "Built cinematic video hero, dual-state sticky navigation, EPC case studies, dynamic XML sitemap, and RFQ workflows.",
+      ],
+    },
+    {
       title: "FitLog",
       role: "Workout Tracking & Exercise Movement Library",
       liveUrl: "https://fit-log-theta-ebon.vercel.app/",
@@ -63,17 +74,6 @@ export function CVDocument() {
       bullets: [
         "Engineered fitness companion featuring exercise library (Bench, Squats, Pull-ups) and set/rep logging.",
         "Built progressive overload tracking and responsive high-contrast dark UI optimized for fast in-gym sessions.",
-      ],
-    },
-    {
-      title: "Bajar Dor (বাজার দর)",
-      role: "Real-Time Bangladesh Commodity Price Tracker",
-      liveUrl: "https://bajar-dor-ruddy.vercel.app/",
-      githubUrl: "https://github.com/mdzarif55/bajar-dor",
-      tech: "TypeScript, React, Tailwind CSS, Market Analytics",
-      bullets: [
-        "Developed daily market price monitor tracking essential food commodities (rice, lentils, oils, spices) across BD.",
-        "Integrated real-time price fluctuation indicators and fast bilingual search to empower everyday consumers.",
       ],
     },
   ];

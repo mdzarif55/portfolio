@@ -278,6 +278,32 @@ export const portfolioData: PortfolioData = {
       },
     },
     {
+      id: "trans-team-ltd",
+      title: "Trans Team Ltd. (TTL)",
+      subtitle: "International Freight Forwarding & Multi-Modal Logistics Platform",
+      description:
+        "Modern corporate logistics and freight-forwarding web platform engineered for Trans Team Ltd. (RMK Group) featuring 42 Next.js routes, cinematic video hero, and EPC project portfolios.",
+      fullDescription:
+        "Trans Team Ltd. (TTL) is an enterprise-grade international freight-forwarding and multi-modal logistics platform built for an RMK Group sister concern in Bangladesh. Engineered with Next.js 14 App Router, TypeScript, Tailwind CSS, Framer Motion, and Swiper, it features 42 pre-rendered routes covering Air & Ocean Freight, Licensed Customs Brokerage, Heavy-Lift Project Cargo case studies, management profiles, dynamic XML sitemaps, and interactive RFQ inquiry workflows.",
+      category: "Full-Stack",
+      liveUrl: "https://trans-team-ltd.vercel.app",
+      githubUrl: "https://github.com/mdzarif55/trans-team-ltd",
+      featured: true,
+      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "Swiper", "SEO / Sitemap"],
+      features: [
+        "Cinematic looping logistics video hero with floating trust bar and ISO/FIATA/IATA accreditation highlights",
+        "Dual-state hero-aware sticky navigation bar with multi-level dropdown menus and mobile accordion drawer",
+        "42 static and dynamic App Router pages covering 8 logistics services, EPC project case studies, and sister concerns",
+        "Interactive RFQ contact workflows, dynamic XML sitemap generation, and high-DPI responsive branding",
+      ],
+      metrics: "42 Pre-rendered Routes",
+      colorScheme: {
+        from: "from-orange-500/20",
+        to: "to-sky-500/20",
+        accent: "border-orange-500/30 text-orange-500",
+      },
+    },
+    {
       id: "fit-log",
       title: "FitLog",
       subtitle: "High-Performance Workout Tracking & Exercise Library",
